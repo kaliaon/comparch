@@ -3,7 +3,7 @@
  */
 
 // API base URL - ideally this would come from environment variables
-const API_BASE_URL = "http://127.0.0.1:8000/api"
+const API_BASE_URL = "https://comparch-5o5d.onrender.com/api"
 
 /**
  * Custom error for API responses
