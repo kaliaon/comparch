@@ -1,0 +1,1516 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Courses Platform api",
+      "description": "API documentation",
+      "termsOfService": "",
+      "contact": {
+        "email": ""
+      },
+      "license": {
+        "name": "BSD License"
+      },
+      "version": "v1"
+    },
+    "host": "127.0.0.1:8000",
+    "schemes": [
+      "http"
+    ],
+    "basePath": "/api",
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "securityDefinitions": {
+      "Basic": {
+        "type": "basic"
+      }
+    },
+    "security": [
+      {
+        "Basic": []
+      }
+    ],
+    "paths": {
+      "/courses/answers/{id}/review/": {
+        "put": {
+          "operationId": "courses_answers_review_update",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Answer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Answer"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "patch": {
+          "operationId": "courses_answers_review_partial_update",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Answer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Answer"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "/courses/courses/": {
+        "get": {
+          "operationId": "courses_courses_list",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Course"
+                }
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "post": {
+          "operationId": "courses_courses_create",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Course"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Course"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": []
+      },
+      "/courses/courses/{course_id}/lessons/": {
+        "post": {
+          "operationId": "courses_courses_lessons_create",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Lesson"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Lesson"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "course_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "/courses/courses/{course_id}/lessons/list/": {
+        "get": {
+          "operationId": "courses_courses_lessons_list_list",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Lesson"
+                }
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "course_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "/courses/courses/{id}/": {
+        "get": {
+          "operationId": "courses_courses_read",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Course"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "put": {
+          "operationId": "courses_courses_update",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Course"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Course"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "patch": {
+          "operationId": "courses_courses_partial_update",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Course"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Course"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "delete": {
+          "operationId": "courses_courses_delete",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "204": {
+              "description": ""
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "A unique integer value identifying this course.",
+            "required": true,
+            "type": "integer"
+          }
+        ]
+      },
+      "/courses/lessons/": {
+        "get": {
+          "operationId": "courses_lessons_list",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Lesson"
+                }
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "post": {
+          "operationId": "courses_lessons_create",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Lesson"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Lesson"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": []
+      },
+      "/courses/lessons/{id}/": {
+        "get": {
+          "operationId": "courses_lessons_read",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Lesson"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "put": {
+          "operationId": "courses_lessons_update",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Lesson"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Lesson"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "patch": {
+          "operationId": "courses_lessons_partial_update",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Lesson"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Lesson"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "delete": {
+          "operationId": "courses_lessons_delete",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "204": {
+              "description": ""
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "A unique integer value identifying this lesson.",
+            "required": true,
+            "type": "integer"
+          }
+        ]
+      },
+      "/courses/lessons/{lesson_id}/create-test/": {
+        "post": {
+          "operationId": "courses_lessons_create-test_create",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/TestWithQuestions"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/TestWithQuestions"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "lesson_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "/courses/lessons/{lesson_id}/test/": {
+        "get": {
+          "operationId": "courses_lessons_test_read",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Test"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "lesson_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "/courses/questions/": {
+        "get": {
+          "operationId": "courses_questions_list",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Question"
+                }
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "post": {
+          "operationId": "courses_questions_create",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Question"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Question"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": []
+      },
+      "/courses/questions/{id}/": {
+        "get": {
+          "operationId": "courses_questions_read",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Question"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "put": {
+          "operationId": "courses_questions_update",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Question"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Question"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "patch": {
+          "operationId": "courses_questions_partial_update",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Question"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Question"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "delete": {
+          "operationId": "courses_questions_delete",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "204": {
+              "description": ""
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "A unique integer value identifying this question.",
+            "required": true,
+            "type": "integer"
+          }
+        ]
+      },
+      "/courses/test-submissions/{id}/result/": {
+        "get": {
+          "operationId": "courses_test-submissions_result_read",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/TestSubmission"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "/courses/test-submissions/{submission_id}/submit/": {
+        "post": {
+          "operationId": "courses_test-submissions_submit_create",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": ""
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "submission_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "/courses/tests/": {
+        "get": {
+          "operationId": "courses_tests_list",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Test"
+                }
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "post": {
+          "operationId": "courses_tests_create",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/TestWithQuestions"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/TestWithQuestions"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": []
+      },
+      "/courses/tests/{id}/": {
+        "get": {
+          "operationId": "courses_tests_read",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Test"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "put": {
+          "operationId": "courses_tests_update",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/TestWithQuestions"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/TestWithQuestions"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "patch": {
+          "operationId": "courses_tests_partial_update",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/TestWithQuestions"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/TestWithQuestions"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "delete": {
+          "operationId": "courses_tests_delete",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "204": {
+              "description": ""
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "A unique integer value identifying this test.",
+            "required": true,
+            "type": "integer"
+          }
+        ]
+      },
+      "/courses/tests/{test_id}/start/": {
+        "post": {
+          "operationId": "courses_tests_start_create",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/TestSubmission"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/TestSubmission"
+              }
+            }
+          },
+          "tags": [
+            "courses"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "test_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "/users/login/": {
+        "post": {
+          "operationId": "users_login_create",
+          "description": "",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/TokenObtainPair"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/TokenObtainPair"
+              }
+            }
+          },
+          "tags": [
+            "users"
+          ]
+        },
+        "parameters": []
+      },
+      "/users/profile/": {
+        "get": {
+          "operationId": "users_profile_read",
+          "description": "View for retrieving the current user's profile",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Profile"
+              }
+            }
+          },
+          "tags": [
+            "users"
+          ]
+        },
+        "parameters": []
+      },
+      "/users/profile/update/": {
+        "put": {
+          "operationId": "users_profile_update_update",
+          "description": "View for updating the current user's profile",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/ProfileUpdate"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/ProfileUpdate"
+              }
+            }
+          },
+          "tags": [
+            "users"
+          ]
+        },
+        "patch": {
+          "operationId": "users_profile_update_partial_update",
+          "description": "View for updating the current user's profile",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/ProfileUpdate"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/ProfileUpdate"
+              }
+            }
+          },
+          "tags": [
+            "users"
+          ]
+        },
+        "parameters": []
+      },
+      "/users/profile/{username}/": {
+        "get": {
+          "operationId": "users_profile_read",
+          "description": "View for retrieving a user's profile",
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/Profile"
+              }
+            }
+          },
+          "tags": [
+            "users"
+          ]
+        },
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "/users/register/": {
+        "post": {
+          "operationId": "users_register_create",
+          "description": "",
+          "parameters": [],
+          "responses": {
+            "201": {
+              "description": ""
+            }
+          },
+          "tags": [
+            "users"
+          ]
+        },
+        "parameters": []
+      },
+      "/users/token/refresh/": {
+        "post": {
+          "operationId": "users_token_refresh_create",
+          "description": "Takes a refresh type JSON web token and returns an access type JSON web\ntoken if the refresh token is valid.",
+          "parameters": [
+            {
+              "name": "data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/TokenRefresh"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "",
+              "schema": {
+                "$ref": "#/definitions/TokenRefresh"
+              }
+            }
+          },
+          "tags": [
+            "users"
+          ]
+        },
+        "parameters": []
+      }
+    },
+    "definitions": {
+      "Answer": {
+        "required": [
+          "question"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "integer",
+            "readOnly": true
+          },
+          "question": {
+            "title": "Question",
+            "type": "integer"
+          },
+          "selected_choices": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "uniqueItems": true
+          },
+          "text_answer": {
+            "title": "Text answer",
+            "type": "string",
+            "x-nullable": true
+          },
+          "is_correct": {
+            "title": "Is correct",
+            "type": "boolean",
+            "x-nullable": true
+          },
+          "feedback": {
+            "title": "Feedback",
+            "type": "string",
+            "x-nullable": true
+          }
+        }
+      },
+      "Lesson": {
+        "required": [
+          "title",
+          "video_url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "integer",
+            "readOnly": true
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1
+          },
+          "video_url": {
+            "title": "Video url",
+            "type": "string",
+            "format": "uri",
+            "maxLength": 200,
+            "minLength": 1
+          },
+          "quiz": {
+            "title": "Quiz",
+            "type": "object"
+          },
+          "created_at": {
+            "title": "Created at",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "course": {
+            "title": "Course",
+            "type": "integer"
+          }
+        }
+      },
+      "Course": {
+        "required": [
+          "name",
+          "description"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "integer",
+            "readOnly": true
+          },
+          "lessons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Lesson"
+            },
+            "readOnly": true
+          },
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "minLength": 1
+          },
+          "created_at": {
+            "title": "Created at",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        }
+      },
+      "Choice": {
+        "required": [
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "integer",
+            "readOnly": true
+          },
+          "text": {
+            "title": "Text",
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1
+          },
+          "is_correct": {
+            "title": "Is correct",
+            "type": "boolean"
+          }
+        }
+      },
+      "Question": {
+        "required": [
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "integer",
+            "readOnly": true
+          },
+          "text": {
+            "title": "Text",
+            "type": "string",
+            "minLength": 1
+          },
+          "question_type": {
+            "title": "Question type",
+            "type": "string",
+            "enum": [
+              "MCQ",
+              "OPEN"
+            ]
+          },
+          "points": {
+            "title": "Points",
+            "type": "integer",
+            "maximum": 9223372036854776000,
+            "minimum": 0
+          },
+          "order": {
+            "title": "Order",
+            "type": "integer",
+            "maximum": 9223372036854776000,
+            "minimum": 0
+          },
+          "choices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Choice"
+            }
+          }
+        }
+      },
+      "TestWithQuestions": {
+        "required": [
+          "lesson",
+          "title",
+          "questions"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "integer",
+            "readOnly": true
+          },
+          "lesson": {
+            "title": "Lesson",
+            "type": "integer"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "x-nullable": true
+          },
+          "passing_score": {
+            "title": "Passing score",
+            "description": "Percentage required to pass",
+            "type": "integer",
+            "maximum": 9223372036854776000,
+            "minimum": 0
+          },
+          "time_limit": {
+            "title": "Time limit",
+            "description": "Time limit in minutes",
+            "type": "integer",
+            "maximum": 9223372036854776000,
+            "minimum": 0
+          },
+          "created_at": {
+            "title": "Created at",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Question"
+            }
+          }
+        }
+      },
+      "Test": {
+        "required": [
+          "lesson",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "integer",
+            "readOnly": true
+          },
+          "lesson": {
+            "title": "Lesson",
+            "type": "integer"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "maxLength": 255,
+            "minLength": 1
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "x-nullable": true
+          },
+          "passing_score": {
+            "title": "Passing score",
+            "description": "Percentage required to pass",
+            "type": "integer",
+            "maximum": 9223372036854776000,
+            "minimum": 0
+          },
+          "time_limit": {
+            "title": "Time limit",
+            "description": "Time limit in minutes",
+            "type": "integer",
+            "maximum": 9223372036854776000,
+            "minimum": 0
+          },
+          "created_at": {
+            "title": "Created at",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Question"
+            },
+            "readOnly": true
+          }
+        }
+      },
+      "TestSubmission": {
+        "required": [
+          "test"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "integer",
+            "readOnly": true
+          },
+          "test": {
+            "title": "Test",
+            "type": "integer"
+          },
+          "user": {
+            "title": "User",
+            "type": "integer"
+          },
+          "score": {
+            "title": "Score",
+            "type": "number",
+            "x-nullable": true
+          },
+          "start_time": {
+            "title": "Start time",
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "end_time": {
+            "title": "End time",
+            "type": "string",
+            "format": "date-time",
+            "x-nullable": true
+          },
+          "is_completed": {
+            "title": "Is completed",
+            "type": "boolean"
+          },
+          "answers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Answer"
+            },
+            "readOnly": true
+          }
+        }
+      },
+      "TokenObtainPair": {
+        "required": [
+          "username",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "title": "Username",
+            "type": "string",
+            "minLength": 1
+          },
+          "password": {
+            "title": "Password",
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "Profile": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "ID",
+            "type": "integer",
+            "readOnly": true
+          },
+          "username": {
+            "title": "Username",
+            "description": "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.",
+            "type": "string",
+            "readOnly": true,
+            "minLength": 1
+          },
+          "email": {
+            "title": "Email",
+            "type": "string",
+            "format": "email",
+            "readOnly": true,
+            "minLength": 1
+          },
+          "full_name": {
+            "title": "Full name",
+            "type": "string",
+            "maxLength": 255
+          },
+          "bio": {
+            "title": "Bio",
+            "type": "string"
+          },
+          "profile_picture": {
+            "title": "Profile picture",
+            "type": "string",
+            "readOnly": true,
+            "x-nullable": true,
+            "format": "uri"
+          },
+          "date_of_birth": {
+            "title": "Date of birth",
+            "type": "string",
+            "format": "date",
+            "x-nullable": true
+          },
+          "phone_number": {
+            "title": "Phone number",
+            "type": "string",
+            "maxLength": 20
+          },
+          "website": {
+            "title": "Website",
+            "type": "string",
+            "format": "uri",
+            "maxLength": 200
+          },
+          "location": {
+            "title": "Location",
+            "type": "string",
+            "maxLength": 100
+          }
+        }
+      },
+      "ProfileUpdate": {
+        "type": "object",
+        "properties": {
+          "full_name": {
+            "title": "Full name",
+            "type": "string",
+            "maxLength": 255
+          },
+          "bio": {
+            "title": "Bio",
+            "type": "string"
+          },
+          "profile_picture": {
+            "title": "Profile picture",
+            "type": "string",
+            "readOnly": true,
+            "x-nullable": true,
+            "format": "uri"
+          },
+          "date_of_birth": {
+            "title": "Date of birth",
+            "type": "string",
+            "format": "date",
+            "x-nullable": true
+          },
+          "phone_number": {
+            "title": "Phone number",
+            "type": "string",
+            "maxLength": 20
+          },
+          "website": {
+            "title": "Website",
+            "type": "string",
+            "format": "uri",
+            "maxLength": 200
+          },
+          "location": {
+            "title": "Location",
+            "type": "string",
+            "maxLength": 100
+          }
+        }
+      },
+      "TokenRefresh": {
+        "required": [
+          "refresh"
+        ],
+        "type": "object",
+        "properties": {
+          "refresh": {
+            "title": "Refresh",
+            "type": "string",
+            "minLength": 1
+          },
+          "access": {
+            "title": "Access",
+            "type": "string",
+            "readOnly": true,
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
