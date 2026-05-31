@@ -15,14 +15,11 @@ if sys.stdout.encoding != 'utf-8':
 from courses.models import Course, Lesson, Test, Question, Choice, QuestionType
 
 def add_example_course():
+    print("Flushing all existing courses, lessons, tests, and questions from the database...")
+    Course.objects.all().delete()
+    
     print("Adding 'Компьютер архитектурасы' course...")
-    
     course_name = "Компьютер архитектурасы"
-    
-    # Clean up old course if it exists
-    Course.objects.filter(name=course_name).delete()
-    # Also delete "Intro to Python" just in case
-    Course.objects.filter(name="Intro to Python").delete()
 
     course = Course.objects.create(
         name=course_name,

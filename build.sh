@@ -16,3 +16,6 @@ python backend/manage.py collectstatic --no-input
 
 echo "=== Running Database Migrations ==="
 python backend/manage.py migrate
+
+echo "=== Seeding Database (add_example_course.py) ==="
+python backend/add_example_course.py
