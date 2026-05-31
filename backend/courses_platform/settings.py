@@ -72,10 +72,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'courses_platform.urls'
 
+REACT_BUILD_DIR = BASE_DIR.parent / 'frontend' / 'courses-platform' / 'build'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [REACT_BUILD_DIR] if REACT_BUILD_DIR.exists() else [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -162,6 +164,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "static"
+STATICFILES_DIRS = [REACT_BUILD_DIR] if REACT_BUILD_DIR.exists() else []
 
 
 MEDIA_URL = '/media/'

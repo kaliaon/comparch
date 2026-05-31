@@ -2,8 +2,10 @@
  * Base API configuration and utility functions
  */
 
-// API base URL - ideally this would come from environment variables
-const API_BASE_URL = "https://comparch-5o5d.onrender.com/api"
+// API base URL - dynamically resolved depending on environment
+const API_BASE_URL = process.env.NODE_ENV === "production"
+  ? "/api"
+  : (process.env.REACT_APP_API_URL || "http://localhost:8000/api");
 
 /**
  * Custom error for API responses
