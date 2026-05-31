@@ -166,7 +166,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "static"
-STATICFILES_DIRS = [REACT_BUILD_DIR] if REACT_BUILD_DIR.exists() else []
+STATICFILES_DIRS = [REACT_BUILD_DIR / 'static'] if REACT_BUILD_DIR.exists() else []
 
 
 MEDIA_URL = '/media/'
