@@ -86,7 +86,7 @@ const MainPage = () => {
             </HeroCourseMeta>
 
             <StartButton to={`course/${featuredCourse.id}`}>
-              Қазір бастау
+              Оқуды бастау
             </StartButton>
           </HeroContent>
         </HeroSection>

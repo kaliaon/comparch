@@ -32,8 +32,8 @@ def add_example_course():
     # Lesson 1: Intro
     intro_lesson = Lesson.objects.create(
         course=course,
-        title="Компьютерлік Архитектурасына Кіріспе",
-        video_url="https://www.youtube.com/watch?v=AkFi90lZmXA",
+        title="Компьютерлік архитектураның негіздері",
+        video_url="https://youtu.be/IV8cEQHnny8?si=WKGUbYMuoLJhLL0B",
         description="""
         <h3>КОМПЬЮТЕР АРХИТЕКТУРАСЫ ПӘНІНЕ КІРІСПЕ</h3>
         <p><strong>Компьютер архитектурасы</strong> — есептеу жүйесінің құрылымын, оның құрамдас бөліктерінің өзара байланысын және ақпаратты өңдеу қағидаттарын сипаттайтын ұғым. Компьютер архитектурасын зерттеу бағдарламалық және аппараттық деңгейлердің қалай өзара әрекеттесетінін түсінуге мүмкіндік береді.</p>
@@ -58,7 +58,7 @@ def add_example_course():
     # Create Test for Lesson 1
     test = Test.objects.create(
         lesson=intro_lesson,
-        title="Кіріспе Тест",
+        title="Кіріспе тест",
         description="Компьютерлік архитектура негіздері бойынша тест"
     )
 
@@ -94,7 +94,7 @@ def add_example_course():
     # Lesson 2: ISA
     isa_lesson = Lesson.objects.create(
         course=course,
-        title="Командалар Жүйесінің Архитектурасы (ISA)",
+        title="Командалар жүйесінің архитектурасы (ISA)",
         video_url="https://www.youtube.com/watch?v=6fgbLOL7bis",
         description="""
         <h3>Командалар Жүйесінің Архитектурасы (ISA)</h3>
@@ -153,7 +153,7 @@ def add_example_course():
     # Create Test for Lesson 2 (ISA)
     isa_test = Test.objects.create(
         lesson=isa_lesson,
-        title="ISA Тест",
+        title="ISA тест",
         description="Командалар жүйесі бойынша тест"
     )
 
@@ -190,7 +190,7 @@ def add_example_course():
     # Lesson 3: Microarchitecture
     micro_lesson = Lesson.objects.create(
         course=course,
-        title="Процессордың Ұйымдастырылуы және Микроархитектурасы",
+        title="Процессордың ұйымдастырылуы және микроархитектурасы",
         video_url="https://www.youtube.com/watch?v=vgPFzblBh7w", # Updated Video URL
         description="""
         <h3>Процессордың Ұйымдастырылуы және Микроархитектурасы</h3>
@@ -215,7 +215,7 @@ def add_example_course():
     # Optional: Add a simple test for Microarchitecture
     micro_test = Test.objects.create(
         lesson=micro_lesson,
-        title="Микроархитектура Тест",
+        title="Микроархитектура тест",
         description="Процессор құрылымы бойынша тест"
     )
     
@@ -250,7 +250,7 @@ def add_example_course():
     # Lesson 4: Memory Hierarchy (Changed from Registers)
     mem_lesson = Lesson.objects.create(
         course=course,
-        title="Жад Иерархиясы",
+        title="Жад иерархиясы",
         video_url="https://www.youtube.com/watch?v=fpnE6UAfbtU",
         description="""
         <h3>Жад Иерархиясы</h3>
@@ -313,7 +313,7 @@ def add_example_course():
 
     mem_test = Test.objects.create(
         lesson=mem_lesson,
-        title="Жад иерархиясы Тест",
+        title="Жад иерархиясы тест",
         description="Жад жүйесін түсінуге арналған тест"
     )
 
@@ -348,7 +348,7 @@ def add_example_course():
     # Lesson 5: IO and Bus
     io_lesson = Lesson.objects.create(
         course=course,
-        title="Енгізу-Шығару Құрылғылары және Жүйелік Шиналар",
+        title="Енгізу-шығару құрылғылары және жүйелік шиналар",
         video_url="https://www.youtube.com/watch?v=alYwqzO6ZEQ", 
         description="""
         <h3>Енгізу-Шығару Құрылғылары және Жүйелік Шиналар</h3>
@@ -365,7 +365,7 @@ def add_example_course():
     
     io_test = Test.objects.create(
         lesson=io_lesson,
-        title="I/O және Шиналар Тест",
+        title="I/O және шиналар тест",
         description="Енгізу-шығару жүйесі бойынша тест"
     )
 
@@ -400,7 +400,7 @@ def add_example_course():
     # Lesson 6: Parallel Processing
     par_lesson = Lesson.objects.create(
         course=course,
-        title="Параллель Өңдеу және Өнімділік",
+        title="Параллель өңдеу және өнімділік",
         video_url="https://www.youtube.com/watch?v=6kEGUCrBEU0",
         description="""
         <h3>Параллель Өңдеу және Өнімділік</h3>
@@ -458,7 +458,7 @@ def add_example_course():
 
     par_test = Test.objects.create(
         lesson=par_lesson,
-        title="Параллель өңдеу Тест",
+        title="Параллель өңдеу тест",
         description="Параллель өңдеу және конвейер бойынша тест"
     )
 
